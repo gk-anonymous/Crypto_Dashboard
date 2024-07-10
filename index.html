@@ -1,0 +1,517 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Crypto Market</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css" integrity="sha512-xh6O/CkQoPOWDdYTDqeRdPCVd1SpvCA9XXcUnZS2FmJNp1coAFzvtCN9BmamE+4aHK8yyUHUSCcJHgXloTyT2A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous">
+  <header>
+    <div class="logo">
+        <img src="yes.png" alt="Logo">
+    </div>
+</header>
+  
+  <style>/* Reset some default styles */
+   /* Reset some default styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif; /* Replace with your preferred font */
+}
+
+header {
+    background-color: #f0f0f0; /* Example background color for header */
+    padding: 10px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: relative; /* Ensure relative positioning for absolute children */
+}
+
+.logo {
+    position: absolute;
+    top: 10px; /* Adjust as needed for top spacing */
+    left: 10px; /* Adjust as needed for left spacing */
+    z-index: 1000; /* Ensure logo is above other content */
+}
+
+.logo img {
+    width: 100px; /* Adjust width as needed */
+    height: auto;
+    filter: brightness(80%) saturate(120%) hue-rotate(330deg); /* Pink effect */
+    /* Other CSS properties for styling your logo */
+
+    /* Responsive adjustments */
+    max-width: 100%; /* Ensure the logo doesn't exceed its container */
+}
+
+main {
+    padding: 20px;
+    margin-top: 80px; /* Adjust to ensure content is below the header */
+}
+
+@media (max-width: 768px) {
+    /* Adjustments for smaller screens (e.g., tablets and mobile devices) */
+    .logo {
+        position: static; /* Reset position for smaller screens */
+        margin: 10px; /* Add margin for spacing */
+        text-align: center; /* Center align the logo */
+    }
+}
+
+    
+    body {
+      background: black;
+      color: white;
+      transition: background-color 0.5s ease;
+    }
+
+    /* Animated Bitcoin Logo with Pink Glow */
+    .glow-container {
+      display: inline-block;
+      position: relative;
+      animation: rotate 4s linear infinite;
+    }
+
+    .glow-container .fa-bitcoin {
+      font-size: 3rem;
+      color: #FFD700; /* Bitcoin yellow color */
+      position: relative;
+      z-index: 1; /* Ensure logo stays above glow */
+    }
+
+    .glow-container::before {
+      content: '';
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      width: 100%;
+      height: 100%;
+      background-color: rgba(255, 105, 180, 0.5); /* Pink glow color */
+      border-radius: 50%;
+      animation: glow 2s infinite ease-in-out;
+      z-index: 0; /* Behind logo */
+    }
+
+    @keyframes rotate {
+      100% {
+        transform: rotate(360deg);
+      }
+    }
+
+    @keyframes glow {
+      0% {
+        box-shadow: 0 0 10px rgba(255, 105, 180, 0.8);
+      }
+      50% {
+        box-shadow: 0 0 20px rgba(255, 105, 180, 0.9);
+      }
+      100% {
+        box-shadow: 0 0 10px rgba(255, 105, 180, 0.8);
+      }
+    }
+    /* End of Animated Bitcoin Logo */
+
+    /* Dark Mode */
+    .light-mode {
+      background: white;
+      color: black;
+    }
+
+    .toggle-switch {
+      position: fixed;
+      top: 20px;
+      right: 20px;
+      display: flex;
+      align-items: center;
+    }
+
+    .toggle-switch input[type="checkbox"] {
+      height: 0;
+      width: 0;
+      visibility: hidden;
+    }
+
+    .toggle-slider {
+      width: 40px;
+      height: 20px;
+      background-color: #ccc;
+      position: relative;
+      border-radius: 20px;
+      margin: 0 10px;
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+    }
+
+    .toggle-slider::before {
+      content: '';
+      position: absolute;
+      width: 16px;
+      height: 16px;
+      border-radius: 50%;
+      left: 2px;
+      top: 50%;
+      transform: translateY(-50%);
+      background-color: white;
+      transition: transform 0.3s ease, background-color 0.3s ease;
+    }
+
+    input[type="checkbox"]:checked + .toggle-slider {
+      background-color: #4CAF50;
+    }
+
+    input[type="checkbox"]:checked + .toggle-slider::before {
+      transform: translateX(20px) translateY(-50%);
+      background-color: black;
+    }
+
+    /* Adjust Crypto Currency text color for light mode */
+    .light-mode .CM {
+      color: black;
+    }
+  </style>
+
+</head>
+<body class="dark-mode">
+  <div class="toggle-switch">
+    <input type="checkbox" id="toggle-dark-mode" class="toggle-checkbox">
+    <label for="toggle-dark-mode" class="toggle-slider"></label>
+    <div class="toggle-label"> Dark Mode</div>
+  </div>
+
+  <div class="container mt-2">
+    <!-- Crypto Currency Title with Animated Bitcoin Logo -->
+    <h2 class="text-center CM text-light">Crypto <span class="glow-container"><i class="fa-brands fa-bitcoin text-warning"></i></span> Currency</h2>
+  </div>
+
+
+  
+
+
+</head>
+<body class="dark-mode">
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-OERcA2EqjJCMA+/3y+gxIOqMEjwtxJY7qPCqsdltbNJuaOe923+mo//f6V8Qbsw3" crossorigin="anonymous"></script>
+  <script>
+    const toggleButton = document.getElementById('toggle-dark-mode');
+    const body = document.body;
+
+    toggleButton.addEventListener('click', function () {
+      body.classList.toggle('dark-mode');
+      body.classList.toggle('light-mode');
+    });
+  </script>
+  
+</head>
+<body>
+  
+
+  <div class="container mt-2 err alert alert-danger" style="display:none"></div>
+
+  <div class="container mt-3">
+    <div class="row">
+      <div class="col-sm-3">
+        <div class="card bg-dark" style="width: 18rem;">
+          <div class="card-body bg-dark">
+            <h5 class="card-title text-center text-light">Open Price</h5>
+            <h2 class="card-subtitle mb-2 text-muted text-center text-success"><i class="fa-solid fa-circle-up text-success"></i> <span class="o text-light"></span></h2>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-sm-3">
+        <div class="card bg-dark" style="width: 18rem;">
+          <div class="card-body bg-dark">
+            <h5 class="card-title text-center text-light">Low Price</h5>
+            <h2 class="card-subtitle mb-2 text-muted text-center text-success"><i class="fa-solid fa-circle-down text-danger"></i> <span class="l text-light"></span></h2>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-sm-3">
+        <div class="card bg-dark" style="width: 18rem;">
+          <div class="card-body bg-dark">
+            <h5 class="card-title text-center text-light">High Price</h5>
+            <h2 class="card-subtitle mb-2 text-muted text-center text-success"><i class="fa-solid fa-bolt-lightning text-warning"></i> <span class="h text-light"></span></h2>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-sm-3">
+        <div class="card bg-dark" style="width: 18rem;">
+          <div class="card-body bg-dark">
+            <h5 class="card-title text-center text-light">Percent Change</h5>
+            <h2 class="card-subtitle mb-2 text-muted text-center text-success"><i class="fa-solid fa-percent"></i><br> <span class="p text-light"></span></h2>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="container mt-4" style="overflow-x: auto;">
+    <div class="row">
+      <div class="col-sm-4">
+        <table class="table table-dark">
+          <thead>
+            <tr>
+              <th scope="col">Attribute</th>
+              <th scope="col">Value</th>
+            </tr>
+          </thead>
+          <tbody class="tbody"></tbody>
+        </table>
+      </div>
+
+      <div class="col-sm-8">
+        <select class="form-control coin-select mb-3">
+          <option value="btcusdt">Bitcoin (BTC/USDT)</option>
+          <option value="ethusdt">Ethereum (ETH/USDT)</option>
+          <option value="dogeusdt">Dogecoin (DOGE/USDT)</option>
+          <option value="bnbusdt">Binance Coin (BNB/USDT)</option>
+          <option value="adacusdt">Cardano (ADA/USDT)</option>
+          <option value="xrpusdt">XRP (XRP/USDT)</option>
+          <option value="solusdt">Solana (SOL/USDT)</option>
+          <option value="dotusdt">Polkadot (DOT/USDT)</option>
+          <option value="uniusdt">Uniswap (UNI/USDT)</option>
+          <option value="ltcusdt">Litecoin (LTC/USDT)</option>
+        </select>
+
+        <select class="form-control cht mb-3">
+          <option value="pie">Pie</option>
+          <option value="line" selected>Line</option>
+          <option value="bar">Bar</option>
+          <option value="doughnut">Doughnut</option>
+        </select>
+
+        <canvas id="myChart" width="400px" height="400px"></canvas>
+      </div>
+    </div>
+  </div>
+
+  <!-- Currency Calculator Section -->
+  <div class="container mt-4">
+    <h3 class="text-light">Currency Calculator</h3>
+    <div class="row">
+      <div class="col-sm-4">
+        <div class="form-group">
+          <label for="amount" class="text-light">Amount:</label>
+          <input type="number" class="form-control" id="amount" placeholder="Enter amount">
+        </div>
+      </div>
+      <div class="col-sm-4">
+        <div class="form-group">
+          <label for="from-currency" class="text-light">From:</label>
+          <select class="form-control" id="from-currency">
+            <option value="BTC">Bitcoin (BTC)</option>
+            <option value="ETH">Ethereum (ETH)</option>
+            <option value="USDT">Tether (USDT)</option>
+            <!-- Add more options as needed -->
+          </select>
+        </div>
+      </div>
+      <div class="col-sm-4">
+        <div class="form-group">
+          <label for="to-currency" class="text-light">To:</label>
+          <select class="form-control" id="to-currency">
+            <option value="USD">US Dollar (USD)</option>
+            <option value="EUR">Euro (EUR)</option>
+            <option value="GBP">British Pound (GBP)</option>
+            <!-- Add more options as needed -->
+          </select>
+        </div>
+      </div>
+    </div>
+    <div class="row mt-3">
+      <div class="col-sm-4">
+        <button class="btn btn-primary" onclick="calculate()">Calculate</button>
+      </div>
+      <div class="col-sm-8">
+        <h4 class="text-light" id="result"></h4>
+      </div>
+    </div>
+  </div>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-OERcA2EqjJCMA+/3y+gxIOqMEjwtxJY7qPCqsdltbNJuaOe923+mo//f6V8Qbsw3" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  <script>
+    var tbody = document.getElementsByClassName('tbody')[0]
+    var cht = document.getElementsByClassName('cht')[0]
+    var coinSelect = document.getElementsByClassName('coin-select')[0]
+    var wc
+
+    function connectWebSocket(symbol) {
+      if (wc) {
+        wc.close()
+      }
+
+      wc = new WebSocket(`wss://stream.binance.com:9443/ws/${symbol}@ticker`)
+
+      wc.onopen = (event) => {
+        document.getElementsByClassName('err')[0].style.display = 'none'
+      }
+
+      wc.onmessage = (e) => {
+        let mydata = JSON.parse(e.data)
+
+        document.getElementsByClassName('o')[0].innerText = mydata.o
+        document.getElementsByClassName('l')[0].innerText = mydata.l
+        document.getElementsByClassName('h')[0].innerText = mydata.h
+        document.getElementsByClassName('p')[0].innerText = mydata.P
+
+        tbody.innerHTML = `
+          <tr> 
+            <td> Symbol</td>
+            <td class='bg-info text-dark'><b> ${mydata.s} </b> </td>
+          </tr>
+          <tr>
+            <td> Price change</td>
+            <td class='text-danger'>${mydata.p}  </td>
+          </tr>
+          <tr>
+            <td> Price change percent</td>
+            <td class='text-warning'>${mydata.P}%  </td>
+          </tr>
+          <tr>
+            <td> Weighted average price</td>
+            <td>${mydata.w}%  </td>
+          </tr>
+          <tr>
+            <td> First trade(F)-1</td>
+            <td>${mydata.x}  </td>
+          </tr>
+          <tr>
+            <td> Last price</td>
+            <td>${mydata.c}  </td>
+          </tr>
+          <tr>
+            <td> Last quantity</td>
+            <td>${mydata.Q} </td>
+          </tr>
+          <tr>
+            <td> Best bid price</td>
+            <td class='text-primary'>${mydata.b} </td>
+          </tr>
+          <tr>
+            <td>Best bid quantity</td>
+            <td>${mydata.B} </td>
+          </tr>
+          <tr>
+            <td>Best ask price</td>
+            <td class='text-primary'>${mydata.a} </td>
+          </tr>
+          <tr>
+            <td>Best ask quantity</td>
+            <td>${mydata.A} </td>
+          </tr>
+          <tr>
+            <td>Open Price</td>
+            <td class='text-info'>${mydata.o} </td>
+          </tr>
+          <tr>
+            <td>High price</td>
+            <td class='text-success'>${mydata.h} </td>
+          </tr>
+          <tr>
+            <td>Low price</td>
+            <td class='text-danger'>${mydata.l} </td>
+          </tr>
+          <tr>
+            <td>Total traded asset volume</td>
+            <td>${mydata.v} </td>
+          </tr>
+          <tr>
+            <td>Total number of trades</td>
+            <td>${mydata.n} </td>
+          </tr>
+        `
+
+        // Update the chart with new data
+        myjson.data.datasets[0].data = [mydata.p, mydata.o, mydata.a, mydata.v, mydata.h, mydata.l]
+        myChart.update()
+      }
+
+      wc.onerror = (e) => {
+        document.getElementsByClassName('err')[0].style.display = 'block'
+        document.getElementsByClassName('err')[0].innerText = 'Due to API maintenance we are facing some issues, please try later...'
+      }
+    }
+
+    coinSelect.onchange = function (e) {
+      connectWebSocket(coinSelect.value)
+    }
+
+    // Initialize WebSocket connection for the default selected coin
+    connectWebSocket(coinSelect.value)
+
+    const ctx = document.getElementById('myChart').getContext('2d')
+    var myjson = {
+      type: 'line',
+      data: {
+        labels: ['Price Change', 'Open Price', 'Best Ask price', 'Volume', 'High price', 'Low Price'],
+        datasets: [{
+          label: '# price',
+          data: [12, 19, 3, 5, 2, 3],
+          backgroundColor: [
+            'rgba(255, 99, 132, 0.2)',
+            'rgba(54, 162, 235, 0.2)',
+            'rgba(255, 206, 86, 0.2)',
+            'rgba(75, 192, 192, 0.2)',
+            'rgba(153, 102, 255, 0.2)',
+            'rgba(255, 159, 64, 0.2)'
+          ],
+          borderColor: [
+            'rgba(255, 99, 132, 1)',
+            'rgba(54, 162, 235, 1)',
+            'rgba(255, 206, 86, 1)',
+            'rgba(75, 192, 192, 1)',
+            'rgba(153, 102, 255, 1)',
+            'rgba(255, 159, 64, 1)'
+          ],
+          borderWidth: 1
+        }]
+      },
+      options: {
+        scales: {
+          y: {
+            beginAtZero: true
+          }
+        }
+      }
+    }
+
+    const myChart = new Chart(ctx, myjson)
+
+    cht.onchange = function (e) {
+      myjson.type = cht.value
+      myChart.update()
+    }
+
+    function calculate() {
+      const amount = document.getElementById('amount').value;
+      const fromCurrency = document.getElementById('from-currency').value;
+      const toCurrency = document.getElementById('to-currency').value;
+
+      // Replace this URL with your API endpoint for currency conversion
+      const url = `https://api.exchangerate-api.com/v4/latest/${fromCurrency}`;
+
+      fetch(url)
+        .then(response => response.json())
+        .then(data => {
+          const rate = data.rates[toCurrency];
+          const result = amount * rate;
+          document.getElementById('result').innerText = `${amount} ${fromCurrency} = ${result.toFixed(2)} ${toCurrency}`;
+        })
+        .catch(error => {
+          document.getElementById('result').innerText = 'Error fetching exchange rate';
+          console.error('Error fetching exchange rate:', error);
+        });
+    }
+  </script>
+</body>
+</html>
